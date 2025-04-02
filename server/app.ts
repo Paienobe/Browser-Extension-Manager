@@ -5,6 +5,7 @@ import { connectDB } from "./db/connect";
 import dotenv from "dotenv";
 import notFound from "./middleware/not-found";
 import errorHandlerMiddleware from "./middleware/error-handler";
+import cors from "cors";
 
 const app = express();
 dotenv.config();
@@ -12,6 +13,7 @@ dotenv.config();
 // middleware
 app.use(express.json());
 app.use(express.static("./public"));
+app.use(cors());
 
 // routes
 app.get("/", (req, res) => {

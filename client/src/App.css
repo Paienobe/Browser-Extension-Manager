@@ -1,42 +1,31 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.text-preset-1 {
+  @apply text-[2.125rem] leading-[100%] tracking-[-0.063rem] font-[700];
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.text-preset-2 {
+  @apply text-[1.25rem] leading-[120%] tracking-[-0.013rem] font-[700];
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-preset-3 {
+  @apply text-[1.25rem] leading-[140%] tracking-[-0.019rem];
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.text-preset-4 {
+  @apply text-[1.25rem] leading-[140%] tracking-[-0.019rem] font-[500];
 }
 
-.card {
-  padding: 2em;
+.text-preset-5 {
+  @apply text-[1rem] leading-[140%] tracking-[-0.031rem] font-[400];
 }
 
-.read-the-docs {
-  color: #888;
+.text-preset-6 {
+  @apply text-[1rem] leading-[140%] tracking-[-0.031rem] font-[500];
+}
+
+.logo-preset {
+  @apply text-[1.5rem] leading-[130%] tracking-[0.031rem] font-[600];
+}
+
+.smooth-transition {
+  @apply transition-all duration-300 ease-linear;
 }
