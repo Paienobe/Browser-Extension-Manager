@@ -11,7 +11,7 @@ const ListMenu = () => {
       <Text
         content="Extensions List"
         text_preset="text-preset-1"
-        className="text-(--color-neutral-900)"
+        className="text-(--color-neutral-900) dark:text-(--color-neutral-0)"
       />
 
       <div className="flex items-center gap-[0.75rem]">

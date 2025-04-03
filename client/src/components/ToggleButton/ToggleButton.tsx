@@ -13,7 +13,7 @@ const ToggleButton = ({
     <button
       className={`block cursor-pointer p-0.5 w-[2.25rem] rounded-(--radius-full) smooth-transition ${
         isActive
-          ? "bg-(--color-red-700) hover:bg-(--color-red-500) focus:bg-(--color-red-700) hover:text-(--color-neutral-0) focus:border-2 focus:border-(--color-neutral-0)"
+          ? "bg-(--color-red-700) hover:bg-(--color-red-500) active:bg-(--color-red-700) hover:text-(--color-neutral-0) active:border-2 active:border-(--color-neutral-0) dark:active:border-(--color-neutral-800)"
           : "bg-(--color-neutral-300)"
       }`}
       onClick={(e) => {

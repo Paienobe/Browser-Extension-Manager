@@ -35,3 +35,5 @@
   --radius-24: 1.5rem;
   --radius-full: 62.438rem;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

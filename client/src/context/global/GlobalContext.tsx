@@ -12,6 +12,8 @@ type GlobalContextType = {
   setSelectedOption: React.Dispatch<React.SetStateAction<number>>;
   extensions: ExtensionType[];
   setExtensions: React.Dispatch<React.SetStateAction<ExtensionType[]>>;
+  isDark: boolean;
+  setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 type ProviderProps = {
@@ -23,6 +25,7 @@ const GlobalContext = createContext({} as GlobalContextType);
 export const GlobalContextProvider = ({ children }: ProviderProps) => {
   const [selectedOption, setSelectedOption] = useState(0);
   const [extensions, setExtensions] = useState<ExtensionType[]>([]);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     getExtensions(selectedOption).then((result) => {
@@ -32,9 +35,25 @@ export const GlobalContextProvider = ({ children }: ProviderProps) => {
     });
   }, [selectedOption]);
 
+  useEffect(() => {
+    const documentElement = document.documentElement;
+    if (isDark) {
+      documentElement?.classList.add("dark");
+    } else {
+      documentElement?.classList.remove("dark");
+    }
+  }, [isDark]);
+
   return (
     <GlobalContext.Provider
-      value={{ selectedOption, setSelectedOption, extensions, setExtensions }}
+      value={{
+        selectedOption,
+        setSelectedOption,
+        extensions,
+        setExtensions,
+        isDark,
+        setIsDark,
+      }}
     >
       {children}
     </GlobalContext.Provider>
