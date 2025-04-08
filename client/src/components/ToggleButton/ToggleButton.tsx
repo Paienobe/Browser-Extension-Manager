@@ -1,14 +1,9 @@
 type ToggleButtonProps = {
   isActive: boolean;
-  extensionID: string;
   clickFunction: () => void;
 };
 
-const ToggleButton = ({
-  isActive,
-  extensionID,
-  clickFunction,
-}: ToggleButtonProps) => {
+const ToggleButton = ({ isActive, clickFunction }: ToggleButtonProps) => {
   return (
     <button
       className={`block cursor-pointer p-0.5 w-[2.25rem] rounded-(--radius-full) smooth-transition ${
@@ -19,7 +14,6 @@ const ToggleButton = ({
       onClick={(e) => {
         e.preventDefault();
         clickFunction();
-        console.log(extensionID);
       }}
     >
       <div

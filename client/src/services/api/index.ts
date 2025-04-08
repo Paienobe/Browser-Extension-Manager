@@ -29,3 +29,27 @@ export const getExtensions = async (requestType: number) => {
     console.error(error);
   }
 };
+
+export const deleteExtension = async (extensionID: string) => {
+  try {
+    const { data } = await axios.delete(`${BaseUrl}/${extensionID}`);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const updateExtension = async (
+  extensionID: string,
+  updatedData: { isActive: boolean }
+) => {
+  try {
+    const { data } = await axios.patch(
+      `${BaseUrl}/${extensionID}`,
+      updatedData
+    );
+    return data.extension as ExtensionType;
+  } catch (error) {
+    console.error(error);
+  }
+};

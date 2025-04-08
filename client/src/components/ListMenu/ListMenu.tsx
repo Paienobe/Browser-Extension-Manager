@@ -25,7 +25,7 @@ const ListMenu = () => {
               className={
                 isSelected
                   ? "bg-(--color-red-700) hover:bg-(--color-red-500) text-(--color-neutral-0)"
-                  : "bg-white hover:opacity-70"
+                  : "bg-white dark:bg-(--color-neutral-700) dark:text-(--color-neutral-0) hover:opacity-70"
               }
               clickFunction={() => setSelectedOption(index)}
             />

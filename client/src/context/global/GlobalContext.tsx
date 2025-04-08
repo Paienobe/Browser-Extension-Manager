@@ -25,7 +25,9 @@ const GlobalContext = createContext({} as GlobalContextType);
 export const GlobalContextProvider = ({ children }: ProviderProps) => {
   const [selectedOption, setSelectedOption] = useState(0);
   const [extensions, setExtensions] = useState<ExtensionType[]>([]);
-  const [isDark, setIsDark] = useState(false);
+
+  const storedTheme = localStorage.getItem("theme");
+  const [isDark, setIsDark] = useState(storedTheme ? true : false);
 
   useEffect(() => {
     getExtensions(selectedOption).then((result) => {
@@ -39,8 +41,10 @@ export const GlobalContextProvider = ({ children }: ProviderProps) => {
     const documentElement = document.documentElement;
     if (isDark) {
       documentElement?.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       documentElement?.classList.remove("dark");
+      localStorage.removeItem("theme");
     }
   }, [isDark]);
 
